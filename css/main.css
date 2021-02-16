@@ -1,0 +1,626 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+input, textarea, button, .button {
+  margin: 0;
+  background-color: #C67934;
+  outline: none;
+  color: white;
+  border: none;
+  border-radius: 5px; }
+  input::placeholder, textarea::placeholder, button::placeholder, .button::placeholder {
+    color: white; }
+  input:focus, textarea:focus, button:focus, .button:focus {
+    border: none; }
+
+.button:hover, button:hover {
+  cursor: pointer;
+  transition: .5s;
+  transform: scale(1.1); }
+
+html {
+  font-family: 'Nunito'; }
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden,
+[hidden] {
+  display: none !important; }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */ }
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto; }
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */ }
+
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]::after {
+    content: " (" attr(href) ")"; }
+  abbr[title]::after {
+    content: " (" attr(title) ")"; }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: ""; }
+  pre {
+    white-space: pre-wrap !important; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+.container {
+  max-width: 80%;
+  margin: 0 auto; }
+
+.title {
+  position: relative;
+  font-size: 30px;
+  font-weight: 700; }
+  .title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 85px;
+    height: 4px;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    background-image: url(../img/subline.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%; }
+
+.description {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px; }
+
+#head {
+  height: 800px; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; }
+  .header__logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600; }
+    .header__logo img {
+      margin-right: 10px; }
+  .header__items {
+    display: flex; }
+  .header__item {
+    margin-right: 40px; }
+  .header__phone {
+    font-weight: 700;
+    color: #C67934; }
+
+.head__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.head__left {
+  max-width: 600px; }
+
+.head__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px; }
+  .head__title span {
+    color: #C67934; }
+
+.head__description {
+  max-width: 500px;
+  margin-bottom: 30px; }
+
+.head__action-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px; }
+
+.head__action-field {
+  display: flex;
+  max-height: 40px; }
+
+.head__action-input {
+  position: relative;
+  max-height: 100%;
+  margin-right: 5px; }
+  .head__action-input::after {
+    content: '';
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 2px;
+    background-color: #fff; }
+
+.head__action input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  max-height: 100%;
+  padding: 12px 7px; }
+
+.head__action-button {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center; }
+
+.guarantee__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 70%; }
+
+.guarantee__title {
+  position: relative;
+  margin: 0 auto 55px; }
+
+.guarantee__columns {
+  display: flex;
+  justify-content: space-between; }
+
+.guarantee__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .guarantee__column img {
+    max-width: 70px; }
+  .guarantee__column-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 12px; }
+  .guarantee__column-subtitle {
+    font-size: 16px;
+    font-weight: 300; }
+
+#cost {
+  height: 706px;
+  background-image: url(../img/cost-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.cost__content {
+  display: flex;
+  justify-content: space-around; }
+
+.cost__block {
+  padding: 65px 60px;
+  background-color: #fff;
+  opacity: .8; }
+  .cost__block-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 35px; }
+    .cost__block-title::after {
+      left: 0;
+      bottom: -10px;
+      transform: translate(0); }
+  .cost__block-description {
+    font-size: 16px;
+    font-weight: 300; }
+
+.cost__left, .cost__right {
+  width: 40%; }
+
+.cost__positions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px; }
+
+.cost__position {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px; }
+  .cost__position::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: -4px;
+    background-color: #C67934; }
+
+#works {
+  height: 950px; }
+
+.works__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; }
+
+.works__title {
+  margin-bottom: 30px; }
+
+.works__description {
+  max-width: 400px;
+  margin-bottom: 15px;
+  text-align: center; }
+
+.works__row {
+  display: flex; }
+
+.works__columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.works__column {
+  width: 200px;
+  height: 300px;
+  margin: 15px; }
+  .works__column-small {
+    width: 200px;
+    height: 135px;
+    margin: 15px; }
+
+#howWeWork {
+  position: relative;
+  height: 460px;
+  background-image: url(../img/how-we-work-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #howWeWorkWrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(247, 247, 247, 0.5);
+    z-index: -1; }
+
+.how_we_work__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  text-align: center; }
+
+.how_we_work__title {
+  margin-bottom: 30px; }
+
+.how_we_work__description {
+  max-width: 380px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px; }
+
+.how_we_work__columns {
+  display: flex; }
+
+.how_we_work__column {
+  position: relative;
+  max-width: 166px;
+  height: 215px;
+  margin-right: 30px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 1px 10px rgba(0, 0, 0, 0.25); }
+  .how_we_work__column-top_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #C5C5C5;
+    margin-bottom: 24px; }
+  .how_we_work__column-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px; }
+  .how_we_work__column-description {
+    font-size: 12px;
+    font-weight: 400; }
+  .how_we_work__column-bottom_title {
+    position: absolute;
+    max-width: 140px;
+    width: 100%;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: #C67934; }
+
+#whyWe {
+  height: 950px; }
+
+.why_we__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  text-align: center; }
+
+.why_we__title {
+  margin-bottom: 30px; }
+
+.why_we__description {
+  max-width: 390px;
+  margin-bottom: 50px; }
+
+.why_we__columns {
+  display: flex;
+  align-items: center; }
+
+.why_we__column {
+  width: 220px; }
+  .why_we__column-left {
+    margin-right: 80px; }
+  .why_we__column-item_middle {
+    margin: 50px 0; }
+  .why_we__column-right {
+    margin-left: 80px; }
+
+#contact {
+  height: 580px;
+  background-color: #000; }
+
+.contact {
+  color: white; }
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .contact__title {
+    margin-bottom: 30px;
+    padding-top: 40px; }
+  .contact__description {
+    margin-bottom: 100px; }
+  .contact__columns {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%; }
+  .contact__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 390px; }
+    .contact__column-left, .contact__column-right {
+      margin-top: 90px; }
+    .contact__column-image {
+      width: 50px;
+      margin-bottom: 20px; }
+    .contact__column-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 50px; }
+    .contact__column-middle {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); }
+      .contact__column-middle form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100%;
+        padding: 30px; }
+      .contact__column-middle label {
+        position: relative;
+        margin-bottom: 30px; }
+        .contact__column-middle label::after {
+          content: '';
+          position: absolute;
+          display: block;
+          margin: auto;
+          left: 50%;
+          bottom: 3px;
+          transform: translateX(-50%);
+          width: 95%;
+          height: 2px;
+          background-color: #000; }
+      .contact__column-middle label, .contact__column-middle input, .contact__column-middle textarea {
+        width: 100%;
+        color: #000; }
+        .contact__column-middle label::placeholder, .contact__column-middle input::placeholder, .contact__column-middle textarea::placeholder {
+          color: #000; }
+      .contact__column-middle input, .contact__column-middle textarea {
+        font-size: 18px;
+        padding: 10px;
+        position: relative;
+        max-height: 100%;
+        margin-right: 5px;
+        background: none;
+        resize: none; }
+      .contact__column-middle input[type=submit] {
+        text-align: center;
+        color: white;
+        background-color: #C67934; }
+
+#js-map {
+  height: 490px;
+  background-image: url(../img/map.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  color: #fff;
+  background-color: #000; }
